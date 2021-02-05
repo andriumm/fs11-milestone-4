@@ -62,5 +62,5 @@ Give yourself a grade for each question. Explain why you gave yourself that grad
 
 ### 1. To Do List
 
-- Grade:
-- Explanation:
+- Grade: 1
+- Explanation: I got stucked with a typo for a lot of time and then i didn't have time to think more in the following steps. I also realised I need more knowledge about the useState and the data I'm passing to the other components.
