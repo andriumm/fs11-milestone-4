@@ -4,7 +4,11 @@ import Form from "./Form.js";
 import List from "./List.js";
 
 function App() {
-  const [toDos, setToDos] = useState(["Go shopping", "Cook", "Clean Windows"]);
+  const [toDos, setToDos] = useState([
+    "Review Recursion",
+    "Study React",
+    "Look again for trees"
+  ]);
 
   const handleToDos = newToDos => {
     setToDos(state => [...state, newToDos]);
@@ -12,10 +16,10 @@ function App() {
 
   return (
     <div className="App text-center mt-4">
-      <h3 className="succes">To Do List</h3>
+      <h1 className="text-success fw-bold">To Do List</h1>
       <Form newToDo={newToDo => handleToDos(newToDo)} />
-      {console.log(toDos)}
-      <List />
+      {/* {console.log(toDos)} */}
+      <List pendingTasks={toDos} />
     </div>
   );
 }

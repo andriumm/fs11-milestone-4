@@ -1,31 +1,36 @@
 import React, { useState } from "react";
 
 export default function Form(props) {
-  // const [tasks, setTasks] = useState(["Go shopping", "Cook", "Clean Windows"]);
-  const [newTask, setNewTask] = useState({ name: "" });
+  const [newTask, setNewTask] = useState("");
 
   const handleInput = ({ target }) => {
-    const name = target.name;
+    //const name = target.name;
     const value = target.value;
-    setNewTask(state => ({ ...state, [name]: value }));
+    setNewTask(value);
   };
 
   const AddTasks = event => {
     event.preventDefault();
-    console.log("clicked!");
+    //console.log("clicked!");
     props.newToDo(newTask);
   };
 
   return (
-    <div>
-      {/* {tasks} */}
-      <form onSubmit={AddTasks} className="form-control">
-        <label className="form-label">
-          New Task
-          <input type="text" name="newTask" onChange={handleInput} />
+    <div className="mt-4">
+      <form onSubmit={AddTasks}>
+        <label>
+          <input
+            type="text"
+            id="inputTask"
+            onChange={handleInput}
+            className="form-control"
+          />
         </label>
         <button className="btn btn-dark mx-2">Add to the Task List</button>
       </form>
     </div>
   );
 }
+
+//REVIEW:
+// TAKE AWAY NAME FROM LINE 25
